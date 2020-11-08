@@ -1,0 +1,16 @@
+.options {
+    display: none;
+}
+h1, h2 {
+    padding-top: 15px;
+}
+body {
+    background-image: url("icecream.jpg");
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-size: cover;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.75);
+}
