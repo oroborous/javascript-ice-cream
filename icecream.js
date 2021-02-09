@@ -3,28 +3,19 @@ $(document).ready(function () {
     $("#style").change(styleChosen);
 
     function styleChosen() {
-        var style = $("#style").val();
-        $("#flavorGroup").show();
+        let style = $("#style").val();
 
+        // Hide all the options and make them not required
+        $(".options").hide();
+
+        // Then show only the one we need
         if (style === "cone") {
             $("#coneGroup").show();
-            $("#scoopsGroup").hide();
-            $("#toppingGroup").hide();
-            $("#maltGroup").hide();
         } else if (style === "dish") {
-            $("#coneGroup").hide();
             $("#scoopsGroup").show();
-            $("#toppingGroup").hide();
-            $("#maltGroup").hide();
         } else if (style === "sundae") {
-            $("#coneGroup").hide();
-            $("#scoopsGroup").hide();
             $("#toppingGroup").show();
-            $("#maltGroup").hide();
         } else if (style === "malt") {
-            $("#coneGroup").hide();
-            $("#scoopsGroup").hide();
-            $("#toppingGroup").hide();
             $("#maltGroup").show();
         }
     }
@@ -33,20 +24,20 @@ $(document).ready(function () {
     function orderIceCream(event) {
         event.preventDefault();
 
-        var style = $("#style").val();
-        var flavor = $("#flavor").val();
+        let style = $("#style").val();
+        let flavor = $("#flavor").val();
 
         if (style === "cone") {
-            var cone = $("#cone").val();
+            let cone = $("#cone").val();
             $("#summary").text(`One ${flavor} ${cone} ${style} coming up!`);
         } else if (style === "dish") {
-            var scoops = $("#scoops").val();
+            let scoops = $("#scoops").val();
             $("#summary").text(`One ${scoops}-scoop ${style} of ${flavor} coming up!`);
         } else if (style === "sundae") {
-            var topping = $("#topping").val();
+            let topping = $("#topping").val();
             $("#summary").text(`One ${flavor} ${style} with ${topping} coming up!`);
         } else if (style === "malt") {
-            var malt = $("#malt").val();
+            let malt = $("#malt").val();
             $("#summary").text(`One ${flavor} ${style} with ${malt} ${style} coming up!`);
         }
 
